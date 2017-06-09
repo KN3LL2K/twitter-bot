@@ -1,0 +1,27 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "basic twitter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KN3LL2K/twitter-bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "Node.js"
+  ],
+  "author": "Harry Bellenie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KN3LL2K/twitter-bot/issues"
+  },
+  "homepage": "https://github.com/KN3LL2K/twitter-bot#readme",
+  "dependencies": {
+    "twitter": "^1.7.0"
+  }
+}
