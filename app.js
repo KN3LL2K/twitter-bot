@@ -1,34 +1,5 @@
-var express = require('express');
-var path = require('path');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.js');
-var request = require('superagent');
-const PORT = 8080;
 
-var app = express();
-var compiler = webpack(webpackConfig);
-// var { shadesPalette } = require('./colorHelpers.js');
 require('dotenv').config();
-
-// console.log(shadesPalette('#DA5252'));
-// app.use(require('webpack-dev-middleware')(compiler, {
-//   noInfo: true,
-//   publicPath: webpackConfig.output.publicPath
-// }))
-
-// app.use(require('webpack-hot-middleware')(compiler));
-
-// app.get('*', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// })
-
-// app.listen(PORT, 'localhost', function(err) {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log(`listening on ${PORT}`);
-// });
 
 var Twitter = require('twitter');
 
@@ -40,15 +11,6 @@ var config = {
 };
 
 var T = new Twitter(config);
-
-// var stream = T.stream('')
-
-// var params = {
-//   q: '@_KN3LL',
-//   count: 10,
-//   result_type: 'recent',
-//   lang: 'en'
-// }
 
 var params = {
   track: '@_KN3LL'
@@ -99,32 +61,5 @@ T.stream('statuses/filter', params, function(stream) {
     console.log(error);
   });
 })
-
-
-// T.get('search/tweets', params, function(err, data, response) {
-//   console.log('hello')
-//   if (!err) {
-//     let results = data.statuses;
-//     // console.log(data.statuses[0].text);
-//     for (let i = 0; i < results.length; i++) {
-//       //for each result 'favorite it'
-//       let tweet = results[i].text;
-//       console.log(tweet);
-//       // let id = { id: results[i].id_str };
-//       // T.post('favorites/create', id, function(err, response) {
-//       //   if (err) {
-//       //     console.log(err[0].message);
-//       //   } else {
-//       //     let username = response.user.screen_name;
-//       //     let tweetId = response.id_str;
-//       //     console.log('favd', `https://twitter.com/${username}/status/${tweetId}`);
-//       //   }
-//       // });
-
-//     }
-//   } else {
-//     console.log(err);
-//   }
-// })
 
 
